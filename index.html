@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Convert your photos to PDF easily with our responsive Photo to PDF tool. Reorder images and download your PDF in seconds.">
+  <meta name="keywords" content="photo to pdf, image to pdf, pdf converter, online pdf tool">
+  <meta name="author" content="Your Name">
+  <title>Photo to PDF Converter</title>
+  <style>
+    /* CSS Styles */
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    .ad-space {
+      text-align: center;
+      padding: 10px;
+      background-color: #e0e0e0;
+      margin: 10px 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .upload-section {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #image-upload {
+      display: none;
+    }
+
+    .upload-label {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .upload-label:hover {
+      background-color: #0056b3;
+    }
+
+    .image-preview {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .image-preview img {
+      max-width: 100px;
+      max-height: 100px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .image-preview img.active {
+      border-color: #007bff;
+    }
+
+    .image-preview img:hover {
+      transform: scale(1.05);
+      border-color: #007bff;
+    }
+
+    .options-section {
+      margin: 20px 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .options-section label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .options-section select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      background-color: #f9f9f9;
+      transition: border-color 0.3s ease;
+    }
+
+    .options-section select:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    .live-preview {
+      margin: 20px 0;
+      padding: 20px;
+      background-color: #f1f1f1;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .live-preview h3 {
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .live-preview canvas {
+      max-width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fff;
+    }
+
+    #generate-pdf {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #generate-pdf:hover {
+      background-color: #218838;
+    }
+  </style>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Top Ad Space -->
+  <div id="top-ad" class="ad-space">
+    <!-- Insert Ad Unit ID here -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_UNIT_ID" crossorigin="anonymous"></script>
+  </div>
+
+  <div class="container">
+    <h1>Photo to PDF Converter</h1>
+    <div class="upload-section">
+      <label for="image-upload" class="upload-label">Upload Images</label>
+      <input type="file" id="image-upload" accept="image/*" multiple>
+    </div>
+    <div id="image-preview" class="image-preview"></div>
+
+    <div class="options-section">
+      <div>
+        <label for="page-size">Page Size</label>
+        <select id="page-size">
+          <option value="a4">A4</option>
+          <option value="letter">Letter</option>
+        </select>
+      </div>
+      <div>
+        <label for="orientation">Orientation</label>
+        <select id="orientation">
+          <option value="portrait">Portrait</option>
+          <option value="landscape">Landscape</option>
+        </select>
+      </div>
+      <div>
+        <label for="image-position">Image Position</label>
+        <select id="image-position">
+          <option value="top">Top</option>
+          <option value="middle">Middle</option>
+          <option value="bottom">Bottom</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="live-preview">
+      <h3>Live Preview</h3>
+      <canvas id="preview-canvas"></canvas>
+    </div>
+
+    <button id="generate-pdf">Generate PDF</button>
+  </div>
+
+  <!-- Bottom Ad Space -->
+  <div id="bottom-ad" class="ad-space">
+    <!-- Insert Ad Unit ID here -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_UNIT_ID" crossorigin="anonymous"></script>
+  </div>
+
+  <script>
+    // JavaScript Functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const imageUpload = document.getElementById('image-upload');
+      const imagePreview = document.getElementById('image-preview');
+      const generatePdfButton = document.getElementById('generate-pdf');
+      const pageSize = document.getElementById('page-size');
+      const orientation = document.getElementById('orientation');
+      const imagePosition = document.getElementById('image-position');
+      const previewCanvas = document.getElementById('preview-canvas');
+      const ctx = previewCanvas.getContext('2d');
+
+      let images = [];
+      let selectedImageIndex = 0;
+
+      // Handle image upload
+      imageUpload.addEventListener('change', (event) => {
+        const files = event.target.files;
+        images = [];
+        imagePreview.innerHTML = '';
+        for (const file of files) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const img = new Image();
+            img.src = e.target.result;
+            img.onload = () => {
+              images.push(img);
+              const imgElement = document.createElement('img');
+              imgElement.src = e.target.result;
+              imgElement.addEventListener('click', () => {
+                selectedImageIndex = images.indexOf(img);
+                updatePreview();
+                document.querySelectorAll('.image-preview img').forEach((el) => el.classList.remove('active'));
+                imgElement.classList.add('active');
+              });
+              imagePreview.appendChild(imgElement);
+              if (images.length === 1) {
+                imgElement.classList.add('active');
+                updatePreview();
+              }
+            };
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      // Update live preview
+      function updatePreview() {
+        if (images.length === 0) return;
+
+        const selectedImage = images[selectedImageIndex];
+        const isPortrait = orientation.value === 'portrait';
+        const pageWidth = isPortrait ? 210 : 297; // A4 dimensions in mm
+        const pageHeight = isPortrait ? 297 : 210;
+
+        const canvasWidth = previewCanvas.offsetWidth;
+        const canvasHeight = (canvasWidth * pageHeight) / pageWidth;
+
+        previewCanvas.width = canvasWidth;
+        previewCanvas.height = canvasHeight;
+
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+        const imgAspectRatio = selectedImage.width / selectedImage.height;
+        const pageAspectRatio = pageWidth / pageHeight;
+
+        let imgWidth, imgHeight;
+        if (imgAspectRatio > pageAspectRatio) {
+          imgWidth = canvasWidth;
+          imgHeight = canvasWidth / imgAspectRatio;
+        } else {
+          imgHeight = canvasHeight;
+          imgWidth = canvasHeight * imgAspectRatio;
+        }
+
+        let x = (canvasWidth - imgWidth) / 2;
+        let y;
+        switch (imagePosition.value) {
+          case 'top':
+            y = 10;
+            break;
+          case 'middle':
+            y = (canvasHeight - imgHeight) / 2;
+            break;
+          case 'bottom':
+            y = canvasHeight - imgHeight - 10;
+            break;
+        }
+
+        ctx.drawImage(selectedImage, x, y, imgWidth, imgHeight);
+      }
+
+      // Add event listeners for live updates
+      pageSize.addEventListener('change', updatePreview);
+      orientation.addEventListener('change', updatePreview);
+      imagePosition.addEventListener('change', updatePreview);
+
+      // Generate PDF
+      generatePdfButton.addEventListener('click', () => {
+        if (images.length === 0) {
+          alert('Please upload at least one image.');
+          return;
+        }
+
+        const pdf = new jsPDF({
+          orientation: orientation.value,
+          unit: 'mm',
+          format: pageSize.value,
+        });
+
+        const pageWidth = pdf.internal.pageSize.getWidth();
+        const pageHeight = pdf.internal.pageSize.getHeight();
+
+        images.forEach((img, index) => {
+          if (index !== 0) pdf.addPage();
+
+          const imgAspectRatio = img.width / img.height;
+          const pageAspectRatio = pageWidth / pageHeight;
+
+          let imgWidth, imgHeight;
+          if (imgAspectRatio > pageAspectRatio) {
+            imgWidth = pageWidth;
+            imgHeight = pageWidth / imgAspectRatio;
+          } else {
+            imgHeight = pageHeight;
+            imgWidth = pageHeight * imgAspectRatio;
+          }
+
+          let x = (pageWidth - imgWidth) / 2;
+          let y;
+          switch (imagePosition.value) {
+            case 'top':
+              y = 10;
+              break;
+            case 'middle':
+              y = (pageHeight - imgHeight) / 2;
+              break;
+            case 'bottom':
+              y = pageHeight - imgHeight - 10;
+              break;
+          }
+
+          pdf.addImage(img, 'JPEG', x, y, imgWidth, imgHeight);
+        });
+
+        pdf.save('converted.pdf');
+      });
+    });
+  </script>
+  <!-- Include jsPDF Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    window.jsPDF = window.jspdf.jsPDF;
+  </script>
+</body>
+</html>
