@@ -166,11 +166,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Top Ad Space -->
-  <div id="top-ad" class="ad-space">
-    <!-- Insert Ad Unit ID here -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_UNIT_ID" crossorigin="anonymous"></script>
-  </div>
+  <!-- Top Ad Space - Full Working Implementation -->
+<div id="top-ad" class="ad-space">
+  <!-- 1. AdSense Loader Script (replace YOUR_AD_UNIT_ID) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_UNIT_ID"></script>
+  
+  <!-- 2. Actual Ad Unit (replace both IDs) -->
+  <ins class="adsbygoogle"
+       style="display:block;"
+       data-ad-client="ca-pub-YOUR_AD_UNIT_ID"
+       data-ad-slot="YOUR_AD_SLOT_ID"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
 
   <div class="container">
     <h1>Photo to PDF Converter</h1>
@@ -213,11 +224,22 @@
     <button id="generate-pdf">Generate PDF</button>
   </div>
 
-  <!-- Bottom Ad Space -->
-  <div id="bottom-ad" class="ad-space">
-    <!-- Insert Ad Unit ID here -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_UNIT_ID" crossorigin="anonymous"></script>
-  </div>
+ <!-- Bottom Ad Space - Full Working Implementation -->
+<div id="bottom-ad" class="ad-space">
+  <!-- 1. AdSense Loader Script (replace YOUR_AD_UNIT_ID) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_UNIT_ID"></script>
+  
+  <!-- 2. Actual Ad Unit (replace both IDs) -->
+  <ins class="adsbygoogle"
+       style="display:block;"
+       data-ad-client="ca-pub-YOUR_AD_UNIT_ID"
+       data-ad-slot="YOUR_BOTTOM_AD_SLOT_ID"  <!-- Different from top ad! -->
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
 
   <script>
     // JavaScript Functionality
