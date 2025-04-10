@@ -1,230 +1,1554 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="QuickTools - Your one-stop destination for free online image tools. Convert images, compress files, and more. Optimized for SEO and AdSense integration.">
-  <meta name="keywords" content="quicktools, online tools, image converter, image to pdf, png to jpg, jpg to webp, image compressor, image resizer">
-  <meta name="author" content="Your Name">
-  <title>QuickTools - Free Online Image Tools</title>
-  <style>
-    /* CSS Styles */
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-      color: #333;
-    }
-
-    .header {
-      text-align: center;
-      padding: 80px 20px;
-      background: linear-gradient(135deg, #007bff, #0056b3);
-      color: #fff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin: 0;
-    }
-
-    .header p {
-      font-size: 1.2rem;
-      margin: 10px 0 0;
-      opacity: 0.9;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 20px;
-      background-color: #fff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-    }
-
-    .section-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 30px;
-      color: #007bff;
-      text-align: center;
-    }
-
-    .tool-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-    }
-
-    .tool-card {
-      padding: 25px;
-      background-color: #fff;
-      border: 1px solid #e0e0e0;
-      border-radius: 12px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .tool-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .tool-card h2 {
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin: 0 0 10px;
-      color: #007bff;
-    }
-
-    .tool-card p {
-      font-size: 1rem;
-      color: #555;
-      margin: 0 0 15px;
-    }
-
-    .tool-card a {
-      display: inline-block;
-      padding: 12px 24px;
-      background: linear-gradient(135deg, #007bff, #0056b3);
-      color: #fff;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .tool-card a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    .footer {
-      text-align: center;
-      padding: 30px;
-      background: linear-gradient(135deg, #007bff, #0056b3);
-      color: #fff;
-      margin-top: 60px;
-    }
-
-    .footer p {
-      margin: 0;
-      font-size: 0.9rem;
-    }
-
-    /* AdSense Integration */
-    .ad-space {
-      text-align: center;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 10px;
-      margin: 40px 0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .header h1 {
-        font-size: 2.2rem;
-      }
-
-      .header p {
-        font-size: 1rem;
-      }
-
-      .section-title {
-        font-size: 1.8rem;
-      }
-
-      .tool-card h2 {
-        font-size: 1.4rem;
-      }
-
-      .tool-card p {
-        font-size: 0.9rem;
-      }
-    }
-  </style>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusChat - Gaming Communication Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #7289da;
+            --primary-dark: #5b6eae;
+            --secondary: #43b581;
+            --danger: #f04747;
+            --warning: #faa61a;
+            --dark: #18191c;
+            --dark-secondary: #2f3136;
+            --dark-tertiary: #36393f;
+            --text: #dcddde;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .server-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: var(--dark-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .server-icon:hover, .server-icon.active {
+            border-radius: 30%;
+            background-color: var(--primary);
+        }
+        
+        .server-icon.active::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 3px;
+            height: 24px;
+            background-color: white;
+            border-radius: 0 3px 3px 0;
+        }
+        
+        .channel {
+            cursor: pointer;
+            padding: 6px 8px;
+            border-radius: 4px;
+            margin-bottom: 2px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .channel:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+        
+        .channel.active {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .message {
+            padding: 10px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .message:first-child {
+            border-top: none;
+        }
+        
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #5865F2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border: 2px solid var(--dark-tertiary);
+        }
+        
+        .online {
+            background-color: var(--secondary);
+        }
+        
+        .idle {
+            background-color: var(--warning);
+        }
+        
+        .dnd {
+            background-color: var(--danger);
+        }
+        
+        .slider {
+            -webkit-appearance: none;
+            height: 8px;
+            border-radius: 4px;
+            background: var(--dark-secondary);
+            outline: none;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--dark-secondary);
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .toggle-slider {
+            background-color: var(--secondary);
+        }
+        
+        input:checked + .toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .nexus-btn {
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .nexus-btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .nexus-btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .nexus-btn-secondary {
+            background-color: var(--dark-secondary);
+            color: var(--text);
+        }
+        
+        .nexus-btn-secondary:hover {
+            background-color: #3a3d44;
+        }
+        
+        .color-swatch {
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .color-swatch:hover {
+            transform: scale(1.1);
+        }
+        
+        section {
+            margin-bottom: 30px;
+        }
+        
+        .dashboard-card {
+            background-color: var(--dark-secondary);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+    </style>
 </head>
 <body>
-  <!-- Header -->
-  <div class="header">
-    <h1>QuickTools</h1>
-    <p>Your one-stop destination for free online image tools. Convert images, compress files, and more.</p>
-  </div>
-
-  <!-- Ad Space (Only Top Ad) -->
-  <div class="ad-space">
-    <!-- Insert Ad Unit ID here -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3115655746089956"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="autorelaxed"
-     data-ad-client="ca-pub-3115655746089956"
-     data-ad-slot="7700683586"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-  </div>
-
-  <!-- Image Tools Section -->
-  <div class="container">
-    <h2 class="section-title">Image Tools</h2>
-    <div class="tool-list">
-      <!-- Photo to PDF Converter -->
-      <div class="tool-card">
-        <h2>Photo to PDF</h2>
-        <p>Convert multiple images into a single PDF file.</p>
-        <a href="photo-to-pdf.html">Use Tool</a>
-      </div>
-
-      <!-- PNG to JPG Converter -->
-      <div class="tool-card">
-        <h2>PNG to JPG</h2>
-        <p>Convert PNG images to JPG format.</p>
-        <a href="png-to-jpg.html">Use Tool</a>
-      </div>
-
-      <!-- JPG to PNG Converter -->
-      <div class="tool-card">
-        <h2>JPG to PNG</h2>
-        <p>Convert JPG images to PNG format.</p>
-        <a href="jpg-to-png.html">Use Tool</a>
-      </div>
-
-      <!-- JPG to WebP Converter -->
-      <div class="tool-card">
-        <h2>JPG to WebP</h2>
-        <p>Convert JPG images to WebP format.</p>
-        <a href="jpg-to-webp.html">Use Tool</a>
-      </div>
-
-      <!-- Image Compressor -->
-      <div class="tool-card">
-        <h2>Image Compressor</h2>
-        <p>Compress images without losing quality.</p>
-        <a href="image-compressor.html">Use Tool</a>
-      </div>
-
-      <!-- Image Resizer -->
-      <div class="tool-card">
-        <h2>Image Resizer</h2>
-        <p>Resize images to your desired dimensions.</p>
-        <a href="image-resizer.html">Use Tool</a>
-      </div>
+    <div class="flex h-full">
+        <!-- Server list sidebar -->
+        <div class="w-20 bg-gray-900 min-h-screen flex flex-col items-center pt-4 relative">
+            <div class="server-icon active flex items-center justify-center mb-4">
+                <span class="text-xl font-bold text-white">NC</span>
+            </div>
+            <div class="h-px w-10 bg-gray-700 mb-4"></div>
+            
+            <div class="server-icon">
+                <i class="fas fa-gamepad text-white text-xl"></i>
+            </div>
+            <div class="server-icon">
+                <i class="fas fa-dragon text-white text-xl"></i>
+            </div>
+            <div class="server-icon">
+                <i class="fas fa-headset text-white text-xl"></i>
+            </div>
+            <div class="server-icon">
+                <i class="fas fa-chess-knight text-white text-xl"></i>
+            </div>
+            <div class="server-icon">
+                <i class="fas fa-trophy text-white text-xl"></i>
+            </div>
+            
+            <div class="mt-auto mb-4">
+                <div class="server-icon">
+                    <i class="fas fa-plus text-green-500 text-xl"></i>
+                </div>
+                <div class="server-icon">
+                    <i class="fas fa-compass text-primary text-xl"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Channel list -->
+        <div class="w-60 bg-gray-800 min-h-screen overflow-y-auto">
+            <div class="p-4 border-b border-gray-900">
+                <h2 class="text-lg font-bold">NexusChat HQ</h2>
+            </div>
+            
+            <div class="p-4">
+                <div class="text-xs uppercase text-gray-400 font-semibold mb-2">Text Channels</div>
+                <div class="channel active">
+                    <i class="fas fa-hashtag mr-2 text-gray-400"></i> welcome
+                </div>
+                <div class="channel">
+                    <i class="fas fa-hashtag mr-2 text-gray-400"></i> announcements
+                </div>
+                <div class="channel">
+                    <i class="fas fa-hashtag mr-2 text-gray-400"></i> general
+                </div>
+                <div class="channel">
+                    <i class="fas fa-hashtag mr-2 text-gray-400"></i> gaming
+                </div>
+                <div class="channel">
+                    <i class="fas fa-hashtag mr-2 text-gray-400"></i> memes
+                </div>
+                
+                <div class="text-xs uppercase text-gray-400 font-semibold mt-6 mb-2">Voice Channels</div>
+                <div class="channel">
+                    <i class="fas fa-volume-up mr-2 text-gray-400"></i> Lobby
+                    <div class="text-xs text-gray-500 ml-6">3 users</div>
+                </div>
+                <div class="channel">
+                    <i class="fas fa-volume-up mr-2 text-gray-400"></i> Gaming Room 1
+                </div>
+                <div class="channel">
+                    <i class="fas fa-volume-up mr-2 text-gray-400"></i> Gaming Room 2
+                </div>
+                <div class="channel">
+                    <i class="fas fa-volume-up mr-2 text-gray-400"></i> AFK
+                </div>
+                
+                <div class="text-xs uppercase text-gray-400 font-semibold mt-6 mb-2">Tournament Channels</div>
+                <div class="channel">
+                    <i class="fas fa-trophy mr-2 text-yellow-500"></i> Tournament Hub
+                </div>
+                <div class="channel">
+                    <i class="fas fa-hashtag mr-2 text-gray-400"></i> tournament-info
+                </div>
+                <div class="channel">
+                    <i class="fas fa-volume-up mr-2 text-gray-400"></i> Team Alpha
+                </div>
+                <div class="channel">
+                    <i class="fas fa-volume-up mr-2 text-gray-400"></i> Team Omega
+                </div>
+            </div>
+            
+            <div class="absolute bottom-0 w-60 bg-gray-900 p-3 flex items-center">
+                <div class="relative mr-3">
+                    <div class="avatar">
+                        <span>U</span>
+                    </div>
+                    <div class="status-indicator online"></div>
+                </div>
+                <div>
+                    <div class="font-medium">Username</div>
+                    <div class="text-xs text-gray-400">#1234</div>
+                </div>
+                <div class="ml-auto">
+                    <i class="fas fa-cog text-gray-400 hover:text-white cursor-pointer"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main content area -->
+        <div class="flex-1 flex flex-col bg-gray-700">
+            <!-- Channel header -->
+            <div class="p-4 border-b border-gray-900 flex items-center">
+                <div>
+                    <i class="fas fa-hashtag mr-2 text-gray-400"></i>
+                    <span class="font-bold">welcome</span>
+                </div>
+                <div class="text-sm text-gray-400 ml-3">Welcome to NexusChat HQ!</div>
+                <div class="ml-auto flex">
+                    <i class="fas fa-search mr-4 text-gray-400 hover:text-white cursor-pointer"></i>
+                    <i class="fas fa-bell mr-4 text-gray-400 hover:text-white cursor-pointer"></i>
+                    <i class="fas fa-users mr-4 text-gray-400 hover:text-white cursor-pointer"></i>
+                    <i class="fas fa-inbox text-gray-400 hover:text-white cursor-pointer"></i>
+                </div>
+            </div>
+            
+            <!-- Tabs for different sections -->
+            <div class="bg-gray-800 p-2 flex">
+                <div class="tab-btn px-4 py-2 cursor-pointer rounded-md bg-gray-700 text-white" data-tab="chat">Chat</div>
+                <div class="tab-btn px-4 py-2 cursor-pointer ml-2" data-tab="voice">Voice Chat</div>
+                <div class="tab-btn px-4 py-2 cursor-pointer ml-2" data-tab="screen">Screen Sharing</div>
+                <div class="tab-btn px-4 py-2 cursor-pointer ml-2" data-tab="server">Server Management</div>
+                <div class="tab-btn px-4 py-2 cursor-pointer ml-2" data-tab="tournament">Tournaments</div>
+                <div class="tab-btn px-4 py-2 cursor-pointer ml-2" data-tab="themes">UI Themes</div>
+                <div class="tab-btn px-4 py-2 cursor-pointer ml-2" data-tab="moderation">Moderation</div>
+            </div>
+            
+            <!-- Chat section -->
+            <div class="tab-content active flex-1 p-4 bg-gray-700 overflow-y-auto" id="chat">
+                <div class="message flex">
+                    <div class="flex-shrink-0 mr-4">
+                        <div class="avatar bg-indigo-600">N</div>
+                    </div>
+                    <div>
+                        <div class="flex items-center">
+                            <span class="font-bold text-white">NexusBot</span>
+                            <span class="text-xs text-gray-400 ml-2">Today at 10:30 AM</span>
+                        </div>
+                        <div class="mt-1">
+                            👋 Welcome to NexusChat! This is a modern gaming communication platform with enhanced features beyond Discord.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="message flex">
+                    <div class="flex-shrink-0 mr-4">
+                        <div class="avatar bg-purple-600">A</div>
+                    </div>
+                    <div>
+                        <div class="flex items-center">
+                            <span class="font-bold text-white">Alex</span>
+                            <span class="text-xs text-gray-400 ml-2">Today at 10:35 AM</span>
+                        </div>
+                        <div class="mt-1">
+                            This new UI looks amazing! Loving the cleaner interface and audio quality indicators.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="message flex">
+                    <div class="flex-shrink-0 mr-4">
+                        <div class="avatar bg-green-600">J</div>
+                    </div>
+                    <div>
+                        <div class="flex items-center">
+                            <span class="font-bold text-white">Jamie</span>
+                            <span class="text-xs text-gray-400 ml-2">Today at 10:37 AM</span>
+                        </div>
+                        <div class="mt-1">
+                            Has anyone tried the tournament integration? I want to set up a Fortnite tournament for this weekend.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="message flex">
+                    <div class="flex-shrink-0 mr-4">
+                        <div class="avatar bg-red-600">S</div>
+                    </div>
+                    <div>
+                        <div class="flex items-center">
+                            <span class="font-bold text-white">Samantha</span>
+                            <span class="text-xs text-gray-400 ml-2">Today at 10:40 AM</span>
+                        </div>
+                        <div class="mt-1">
+                            Yes! The tournament system is amazing. You can create brackets, assign teams, and even integrate with game APIs for automatic score tracking.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="message flex">
+                    <div class="flex-shrink-0 mr-4">
+                        <div class="avatar bg-blue-600">C</div>
+                    </div>
+                    <div>
+                        <div class="flex items-center">
+                            <span class="font-bold text-white">Chris</span>
+                            <span class="text-xs text-gray-400 ml-2">Today at 10:45 AM</span>
+                        </div>
+                        <div class="mt-1">
+                            The screen sharing with game optimization is a game changer. My streams look so much better with the adaptive bitrate technology!
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Message input -->
+                <div class="mt-4 bg-gray-800 p-4 rounded-md">
+                    <div class="flex items-center">
+                        <div class="flex-1 bg-gray-700 rounded-md p-2">
+                            <input type="text" placeholder="Message #welcome" class="w-full bg-transparent border-0 focus:outline-none text-white">
+                        </div>
+                        <div class="ml-2">
+                            <button class="nexus-btn nexus-btn-primary">
+                                <i class="fas fa-paper-plane mr-2"></i> Send
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex mt-2 text-gray-400">
+                        <i class="fas fa-plus mr-4 cursor-pointer hover:text-white"></i>
+                        <i class="fas fa-image mr-4 cursor-pointer hover:text-white"></i>
+                        <i class="fas fa-gift mr-4 cursor-pointer hover:text-white"></i>
+                        <i class="fas fa-smile mr-4 cursor-pointer hover:text-white"></i>
+                        <i class="fas fa-paperclip cursor-pointer hover:text-white"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Voice Chat section -->
+            <div class="tab-content p-4 bg-gray-700" id="voice">
+                <section>
+                    <h2 class="text-2xl font-bold mb-4">Voice Chat Hub</h2>
+                    <div class="bg-gray-800 rounded-lg p-6">
+                        <div class="text-center mb-6">
+                            <h3 class="text-lg font-semibold mb-1">Currently in: Gaming Room 1</h3>
+                            <p class="text-sm text-gray-400">3 members connected</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-4 mb-6">
+                            <div class="bg-gray-700 p-4 rounded-lg flex items-center">
+                                <div class="relative mr-3">
+                                    <div class="avatar bg-blue-600">R</div>
+                                    <div class="status-indicator online"></div>
+                                </div>
+                                <div>
+                                    <div class="font-medium">RaiderPro</div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-microphone text-green-500 mr-1"></i>
+                                        <div class="w-16 bg-gray-600 h-1 rounded-full">
+                                            <div class="bg-green-500 h-1 rounded-full" style="width: 80%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-700 p-4 rounded-lg flex items-center">
+                                <div class="relative mr-3">
+                                    <div class="avatar bg-purple-600">N</div>
+                                    <div class="status-indicator online"></div>
+                                </div>
+                                <div>
+                                    <div class="font-medium">NinjaGamer</div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-microphone text-green-500 mr-1"></i>
+                                        <div class="w-16 bg-gray-600 h-1 rounded-full">
+                                            <div class="bg-green-500 h-1 rounded-full" style="width: 60%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-700 p-4 rounded-lg flex items-center">
+                                <div class="relative mr-3">
+                                    <div class="avatar">U</div>
+                                    <div class="status-indicator online"></div>
+                                </div>
+                                <div>
+                                    <div class="font-medium">Username (You)</div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-microphone-slash text-red-500 mr-1"></i>
+                                        <span class="text-xs text-gray-400">Muted</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-900 p-4 rounded-lg mb-6">
+                            <h4 class="font-semibold mb-4">Enhanced Audio Controls</h4>
+                            <div class="flex items-center justify-between mb-4">
+                                <span>Microphone</span>
+                                <div class="flex items-center">
+                                    <i class="fas fa-microphone-slash text-red-500 mr-2"></i>
+                                    <input type="range" min="0" max="100" value="80" class="slider w-32">
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between mb-4">
+                                <span>Speakers</span>
+                                <div class="flex items-center">
+                                    <i class="fas fa-volume-up text-green-500 mr-2"></i>
+                                    <input type="range" min="0" max="100" value="70" class="slider w-32">
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between mb-4">
+                                <span>Noise Suppression</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            
+                            <div class="flex items-center justify-between mb-4">
+                                <span>Echo Cancellation</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <span>3D Spatial Audio</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center space-x-4">
+                            <button class="nexus-btn nexus-btn-primary flex items-center">
+                                <i class="fas fa-phone-alt mr-2"></i> Join Another Channel
+                            </button>
+                            <button class="nexus-btn nexus-btn-secondary flex items-center">
+                                <i class="fas fa-cog mr-2"></i> Audio Settings
+                            </button>
+                            <button class="nexus-btn bg-red-600 text-white hover:bg-red-700 flex items-center">
+                                <i class="fas fa-phone-slash mr-2"></i> Disconnect
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2 class="text-xl font-bold mb-4 mt-6">Audio Quality Metrics</h2>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-semibold">Latency</h3>
+                                <span class="text-green-500">24ms</span>
+                            </div>
+                            <div class="w-full bg-gray-700 h-2 rounded-full">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 20%"></div>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-1">Ultra-low latency connection</p>
+                        </div>
+                        
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-semibold">Packet Loss</h3>
+                                <span class="text-green-500">0.1%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 h-2 rounded-full">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 5%"></div>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-1">Excellent connection quality</p>
+                        </div>
+                        
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-semibold">Bitrate</h3>
+                                <span class="text-green-500">128 kbps</span>
+                            </div>
+                            <div class="w-full bg-gray-700 h-2 rounded-full">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-1">High definition audio enabled</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Screen Sharing section -->
+            <div class="tab-content p-4 bg-gray-700" id="screen">
+                <section>
+                    <h2 class="text-2xl font-bold mb-4">Advanced Screen Sharing</h2>
+                    <div class="bg-gray-800 rounded-lg p-6">
+                        <div class="grid grid-cols-3 gap-6 mb-6">
+                            <div class="col-span-2">
+                                <div class="bg-gray-900 rounded-lg p-2 aspect-video flex items-center justify-center">
+                                    <div class="text-center">
+                                        <i class="fas fa-desktop text-5xl mb-4 text-gray-600"></i>
+                                        <p class="text-gray-400">No active screen share</p>
+                                        <button class="nexus-btn nexus-btn-primary mt-4">
+                                            <i class="fas fa-share mr-2"></i> Share Your Screen
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="bg-gray-900 p-4 rounded-lg h-full">
+                                    <h3 class="font-semibold mb-4">Share Options</h3>
+                                    
+                                    <div class="mb-4">
+                                        <label class="block text-sm font-medium mb-2">Share Type</label>
+                                        <select class="w-full bg-gray-800 text-white rounded p-2 border border-gray-700">
+                                            <option>Entire Screen</option>
+                                            <option>Application Window</option>
+                                            <option>Browser Tab</option>
+                                            <option>Game Capture</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <label class="block text-sm font-medium mb-2">Resolution</label>
+                                        <select class="w-full bg-gray-800 text-white rounded p-2 border border-gray-700">
+                                            <option>Source Resolution (1920x1080)</option>
+                                            <option>720p</option>
+                                            <option>480p</option>
+                                            <option>360p</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <label class="block text-sm font-medium mb-2">Frame Rate</label>
+                                        <select class="w-full bg-gray-800 text-white rounded p-2 border border-gray-700">
+                                            <option>60 FPS</option>
+                                            <option>30 FPS</option>
+                                            <option>15 FPS</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-sm font-medium">Include Audio</span>
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-900 p-4 rounded-lg mb-6">
+                            <h3 class="font-semibold mb-4">Game Optimization Settings</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <div class="flex items-center justify-between mb-4">
+                                        <span>Game Mode</span>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between mb-4">
+                                        <span>Low Latency Mode</span>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between">
+                                        <span>Hardware Acceleration</span>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="mb-4">
+                                        <label class="block text-sm font-medium mb-2">Bitrate Priority</label>
+                                        <select class="w-full bg-gray-800 text-white rounded p-2 border border-gray-700">
+                                            <option>Quality</option>
+                                            <option>Balanced</option>
+                                            <option>Performance</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Game Detection</label>
+                                        <select class="w-full bg-gray-800 text-white rounded p-2 border border-gray-700">
+                                            <option>Auto-detect (Recommended)</option>
+                                            <option>Manual Selection</option>
+                                            <option>Disable</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="font-semibold mb-4">Recently Shared Applications</h3>
+                        <div class="grid grid-cols-4 gap-4">
+                            <div class="bg-gray-900 p-3 rounded-lg cursor-pointer hover:bg-gray-800">
+                                <div class="flex items-center justify-center bg-gray-800 rounded-md p-2 mb-2">
+                                    <i class="fas fa-gamepad text-2xl text-blue-500"></i>
+                                </div>
+                                <div class="text-center text-sm">Fortnite</div>
+                            </div>
+                            
+                            <div class="bg-gray-900 p-3 rounded-lg cursor-pointer hover:bg-gray-800">
+                                <div class="flex items-center justify-center bg-gray-800 rounded-md p-2 mb-2">
+                                    <i class="fas fa-ghost text-2xl text-purple-500"></i>
+                                </div>
+                                <div class="text-center text-sm">Call of Duty</div>
+                            </div>
+                            
+                            <div class="bg-gray-900 p-3 rounded-lg cursor-pointer hover:bg-gray-800">
+                                <div class="flex items-center justify-center bg-gray-800 rounded-md p-2 mb-2">
+                                    <i class="fab fa-chrome text-2xl text-red-400"></i>
+                                </div>
+                                <div class="text-center text-sm">Chrome</div>
+                            </div>
+                            
+                            <div class="bg-gray-900 p-3 rounded-lg cursor-pointer hover:bg-gray-800">
+                                <div class="flex items-center justify-center bg-gray-800 rounded-md p-2 mb-2">
+                                    <i class="fas fa-desktop text-2xl text-green-500"></i>
+                                </div>
+                                <div class="text-center text-sm">Desktop</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Server Management section -->
+            <div class="tab-content p-4 bg-gray-700" id="server">
+                <section>
+                    <h2 class="text-2xl font-bold mb-4">Server Management Dashboard</h2>
+                    
+                    <div class="grid grid-cols-3 gap-4 mb-6">
+                        <div class="dashboard-card">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-semibold">Active Users</h3>
+                                <span class="text-green-500">42</span>
+                            </div>
+                            <div class="w-full bg-gray-700 h-2 rounded-full">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                            <div class="text-xs text-gray-400 mt-1">+15% from last week</div>
+                        </div>
+                        
+                        <div class="dashboard-card">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-semibold">Voice Channels</h3>
+                                <span class="text-blue-500">8</span>
+                            </div>
+                            <div class="w-full bg-gray-700 h-2 rounded-full">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 60%"></div>
+                            </div>
+                            <div class="text-xs text-gray-400 mt-1">4 currently active</div>
+                        </div>
+                        
+                        <div class="dashboard-card">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-semibold">Server Health</h3>
+                                <span class="text-green-500">Excellent</span>
+                            </div>
+                            <div class="w-full bg-gray-700 h-2 rounded-full">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                            <div class="text-xs text-gray-400 mt-1">99.9% uptime this month</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="col-span-2">
+                            <div class="dashboard-card">
+                                <h3 class="font-semibold mb-4">Server Settings</h3>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium mb-2">Server Name</label>
+                                    <input type="text" value="NexusChat HQ" class="w-full bg-gray-900 text-white rounded p-2 border border-gray-700">
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium mb-2">Region</label>
+                                    <select class="w-full bg-gray-900 text-white rounded p-2 border border-gray-700">
+                                        <option>US East</option>
+                                        <option>US West</option>
+                                        <option>Europe</option>
+                                        <option>Asia</option>
+                                        <option>Auto (Recommended)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium mb-2">Default Notification Settings</label>
+                                    <select class="w-full bg-gray-900 text-white rounded p-2 border border-gray-700">
+                                        <option>All Messages</option>
+                                        <option>Only @mentions</option>
+                                        <option>Nothing</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-sm font-medium">Community Server</span>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-sm font-medium">Verification Level</span>
+                                    <select class="bg-gray-900 text-white rounded p-2 border border-gray-700">
+                                        <option>None</option>
+                                        <option>Low</option>
+                                        <option>Medium</option>
+                                        <option>High</option>
+                                        <option>Highest</option>
+                                    </select>
+                                </div>
+                                
+                                <button class="nexus-btn nexus-btn-primary">Save Changes</button>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="dashboard-card h-full">
+                                <h3 class="font-semibold mb-4">Quick Actions</h3>
+                                
+                                <div class="space-y-2">
+                                    <button class="nexus-btn nexus-btn-secondary w-full text-left">
+                                        <i class="fas fa-user-plus mr-2"></i> Invite People
+                                    </button>
+                                    
+                                    <button class="nexus-btn nexus-btn-secondary w-full text-left">
+                                        <i class="fas fa-shield-alt mr-2"></i> Server Moderation
+                                    </button>
+                                    
+                                    <button class="nexus-btn nexus-btn-secondary w-full text-left">
+                                        <i class="fas fa-cog mr-2"></i> Role Management
+                                    </button>
+                                    
+                                    <button class="nexus-btn nexus-btn-secondary w-full text-left">
+                                        <i class="fas fa-puzzle-piece mr-2"></i> Manage Integrations
+                                    </button>
+                                    
+                                    <button class="nexus-btn nexus-btn-secondary w-full text-left">
+                                        <i class="fas fa-chart-bar mr-2"></i> Analytics
+                                    </button>
+                                    
+                                    <button class="nexus-btn nexus-btn-secondary w-full text-left">
+                                        <i class="fas fa-paste mr-2"></i> Audit Logs
+                                    </button>
+                                    
+                                    <button class="nexus-btn bg-red-600 text-white hover:bg-red-700 w-full text-left">
+                                        <i class="fas fa-trash-alt mr-2"></i> Delete Server
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Tournament section -->
+            <div class="tab-content p-4 bg-gray-700" id="tournament">
+                <section>
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-2xl font-bold">Tournament Hub</h2>
+                        <button class="nexus-btn nexus-btn-primary">
+                            <i class="fas fa-plus mr-2"></i> Create Tournament
+                        </button>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-lg p-6 mb-6">
+                        <h3 class="text-xl font-semibold mb-4">Active Tournaments</h3>
+                        
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="bg-gray-900 rounded-lg p-4">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-bold text-lg">Fortnite Weekly Cup</h4>
+                                        <p class="text-sm text-gray-400">Starts in 2 days</p>
+                                    </div>
+                                    <div class="bg-blue-600 text-xs font-semibold py-1 px-2 rounded">UPCOMING</div>
+                                </div>
+                                
+                                <div class="my-4">
+                                    <div class="flex items-center mb-2">
+                                        <i class="fas fa-users mr-2 text-gray-400"></i>
+                                        <span>32 teams registered</span>
+                                    </div>
+                                    <div class="flex items-center mb-2">
+                                        <i class="fas fa-trophy mr-2 text-yellow-500"></i>
+                                        <span>Prize Pool: $500</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-gamepad mr-2 text-gray-400"></i>
+                                        <span>Game: Fortnite</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex space-x-2">
+                                    <button class="nexus-btn nexus-btn-secondary text-sm py-1">View Details</button>
+                                    <button class="nexus-btn nexus-btn-primary text-sm py-1">Register Team</button>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-900 rounded-lg p-4">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-bold text-lg">Valorant Championship</h4>
+                                        <p class="text-sm text-gray-400">In progress - Round 2/4</p>
+                                    </div>
+                                    <div class="bg-green-600 text-xs font-semibold py-1 px-2 rounded">LIVE</div>
+                                </div>
+                                
+                                <div class="my-4">
+                                    <div class="flex items-center mb-2">
+                                        <i class="fas fa-users mr-2 text-gray-400"></i>
+                                        <span>16 teams competing</span>
+                                    </div>
+                                    <div class="flex items-center mb-2">
+                                        <i class="fas fa-trophy mr-2 text-yellow-500"></i>
+                                        <span>Prize Pool: $1,000</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-gamepad mr-2 text-gray-400"></i>
+                                        <span>Game: Valorant</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex space-x-2">
+                                    <button class="nexus-btn nexus-btn-secondary text-sm py-1">View Bracket</button>
+                                    <button class="nexus-btn bg-red-600 text-white hover:bg-red-700 text-sm py-1">Watch Live</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4">Tournament Creation Tools</h3>
+                        
+                        <div class="grid grid-cols-3 gap-4 mb-6">
+                            <div class="bg-gray-900 p-4 rounded-lg text-center">
+                                <i class="fas fa-sitemap text-4xl text-blue-500 mb-2"></i>
+                                <h4 class="font-semibold mb-1">Bracket Generator</h4>
+                                <p class="text-xs text-gray-400">Single/Double Elimination & Round Robin</p>
+                            </div>
+                            
+                            <div class="bg-gray-900 p-4 rounded-lg text-center">
+                                <i class="fas fa-tasks text-4xl text-green-500 mb-2"></i>
+                                <h4 class="font-semibold mb-1">Match Scheduler</h4>
+                                <p class="text-xs text-gray-400">Automated scheduling with timezone support</p>
+                            </div>
+                            
+                            <div class="bg-gray-900 p-4 rounded-lg text-center">
+                                <i class="fas fa-robot text-4xl text-purple-500 mb-2"></i>
+                                <h4 class="font-semibold mb-1">Game Integration</h4>
+                                <p class="text-xs text-gray-400">Automatic score tracking & verification</p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="font-semibold mb-4">Game Integrations Available</h4>
+                        <div class="grid grid-cols-6 gap-2">
+                            <div class="bg-gray-900 p-2 rounded-lg text-center">
+                                <i class="fas fa-crosshairs text-2xl text-red-500 mb-1"></i>
+                                <div class="text-xs">Valorant</div>
+                            </div>
+                            
+                            <div class="bg-gray-900 p-2 rounded-lg text-center">
+                                <i class="fas fa-meteor text-2xl text-blue-500 mb-1"></i>
+                                <div class="text-xs">Fortnite</div>
+                            </div>
+                            
+                            <div class="bg-gray-900 p-2 rounded-lg text-center">
+                                <i class="fas fa-hat-wizard text-2xl text-purple-500 mb-1"></i>
+                                <div class="text-xs">League of Legends</div>
+                            </div>
+                            
+                            <div class="bg-gray-900 p-2 rounded-lg text-center">
+                                <i class="fas fa-fighter-jet text-2xl text-yellow-500 mb-1"></i>
+                                <div class="text-xs">CS:GO</div>
+                            </div>
+                            
+                            <div class="bg-gray-900 p-2 rounded-lg text-center">
+                                <i class="fas fa-fist-raised text-2xl text-red-400 mb-1"></i>
+                                <div class="text-xs">Overwatch</div>
+                            </div>
+                            
+                            <div class="bg-gray-900 p-2 rounded-lg text-center">
+                                <i class="fas fa-plus text-2xl text-gray-500 mb-1"></i>
+                                <div class="text-xs">More</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- UI Themes section -->
+            <div class="tab-content p-4 bg-gray-700" id="themes">
+                <section>
+                    <h2 class="text-2xl font-bold mb-4">UI Customization</h2>
+                    
+                    <div class="bg-gray-800 rounded-lg p-6 mb-6">
+                        <h3 class="text-xl font-semibold mb-4">Theme Selection</h3>
+                        
+                        <div class="grid grid-cols-4 gap-4 mb-6">
+                            <div class="bg-gray-900 p-3 rounded-lg cursor-pointer border-2 border-blue-500">
+                                <div class="h-20 bg-gradient-to-r from-gray-900 to-gray-800 rounded-md mb-2"></div>
+                                <div class="text-center font-medium">Dark (Default)</div>
+                            </div>
+                            
+                            <div class="bg-gray-900 p-3 rounded-lg cursor-pointer">
+                                <div class="h-20 bg-gradient-to-r from-blue-900 to-purple-900 rounded-md mb-2"></div>
+                                <div class="text-center font-medium">Midnight</div>
+                            </div>
+                            
+                            <div class="bg-gray-900 p-3 rounded-lg cursor-pointer">
+                                <div class="h-20 bg-gradient-to-r from-gray-200 to-gray-100 rounded-md mb-2"></div>
+                                <div class="text-center font-medium">Light Mode</div>
+                            </div>
+                            
+                            <div class="bg-gray-900 p-3 rounded-lg cursor-pointer">
+                                <div class="h-20 bg-gradient-to-r from-green-900 to-blue-900 rounded-md mb-2"></div>
+                                <div class="text-center font-medium">Forest</div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="font-semibold mb-4">Accent Color</h3>
+                        <div class="flex space-x-4 mb-6">
+                            <div class="color-swatch bg-blue-600 border-2 border-white"></div>
+                            <div class="color-swatch bg-purple-600"></div>
+                            <div class="color-swatch bg-green-600"></div>
+                            <div class="color-swatch bg-red-600"></div>
+                            <div class="color-swatch bg-yellow-600"></div>
+                            <div class="color-swatch bg-pink-600"></div>
+                            <div class="color-swatch bg-indigo-600"></div>
+                            <div class="color-swatch bg-teal-600"></div>
+                        </div>
+                        
+                        <h3 class="font-semibold mb-4">Font Selection</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <select class="w-full bg-gray-900 text-white rounded p-2 border border-gray-700">
+                                    <option>Segoe UI (Default)</option>
+                                    <option>Roboto</option>
+                                    <option>Open Sans</option>
+                                    <option>Poppins</option>
+                                    <option>Inter</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <select class="w-full bg-gray-900 text-white rounded p-2 border border-gray-700">
+                                    <option>Medium</option>
+                                    <option>Small</option>
+                                    <option>Large</option>
+                                    <option>Extra Large</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4">Advanced Customization</h3>
+                        
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <div class="mb-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <label class="font-medium">Compact Mode</label>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <p class="text-xs text-gray-400">Reduce spacing between messages and UI elements</p>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <label class="font-medium">Animations</label>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <p class="text-xs text-gray-400">Enable UI animations and transitions</p>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <label class="font-medium">Custom CSS</label>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <p class="text-xs text-gray-400">Apply your own custom CSS styling</p>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="mb-4">
+                                    <label class="block font-medium mb-2">Message Display</label>
+                                    <select class="w-full bg-gray-900 text-white rounded p-2 border border-gray-700">
+                                        <option>Standard</option>
+                                        <option>Cozy</option>
+                                        <option>Compact</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block font-medium mb-2">Chat Bubble Style</label>
+                                    <select class="w-full bg-gray-900 text-white rounded p-2 border border-gray-700">
+                                        <option>Flat (Default)</option>
+                                        <option>Bubbles</option>
+                                        <option>Minimal</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label class="block font-medium mb-2">Emoji Style</label>
+                                    <select class="w-full bg-gray-900 text-white rounded p-2 border border-gray-700">
+                                        <option>System Default</option>
+                                        <option>Twitter</option>
+                                        <option>Google</option>
+                                        <option>Apple</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-end mt-6 space-x-4">
+                            <button class="nexus-btn nexus-btn-secondary">Reset to Default</button>
+                            <button class="nexus-btn nexus-btn-primary">Save Theme</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Moderation tools section -->
+            <div class="tab-content p-4 bg-gray-700" id="moderation">
+                <section>
+                    <h2 class="text-2xl font-bold mb-4">Advanced Moderation Tools</h2>
+                    
+                    <div class="bg-gray-800 rounded-lg p-6 mb-6">
+                        <h3 class="text-xl font-semibold mb-4">AutoMod Configuration</h3>
+                        
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <div class="mb-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <label class="font-medium">Enable AutoMod</label>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <p class="text-xs text-gray-400">Automatically filter inappropriate content</p>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block font-medium mb-2">Filter Strength</label>
+                                    <select class="w-full bg-gray-900 text-white rounded p-2 border border-gray-700">
+                                        <option>Medium</option>
+                                        <option>Low</option>
+                                        <option>High</option>
+                                        <option>Custom</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label class="block font-medium mb-2">Action for Violations</label>
+                                    <select class="w-full bg-gray-900 text-white rounded p-2 border border-gray-700">
+                                        <option>Delete Message & Warn</option>
+                                        <option>Delete Message Only</option>
+                                        <option>Flag for Review</option>
+                                        <option>Timeout User</option>
+                                        <option>Ban User</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="bg-gray-900 p-4 rounded-lg h-full">
+                                    <h4 class="font-semibold mb-3">Content Filters</h4>
+                                    
+                                    <div class="space-y-3">
+                                        <div class="flex items-center justify-between">
+                                            <span>Profanity Filter</span>
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="flex items-center justify-between">
+                                            <span>Spam Detection</span>
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="flex items-center justify-between">
+                                            <span>Excessive Caps</span>
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="flex items-center justify-between">
+                                            <span>Link Filter</span>
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="flex items-center justify-between">
+                                            <span>AI Content Detection</span>
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="flex items-center justify-between">
+                                            <span>Raid Protection</span>
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-gray-800 rounded-lg p-6">
+                            <h3 class="text-xl font-semibold mb-4">User Management</h3>
+                            
+                            <div class="mb-4">
+                                <div class="relative">
+                                    <input type="text" placeholder="Search users..." class="w-full bg-gray-900 text-white rounded p-2 pl-8 border border-gray-700">
+                                    <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-2 mb-4">
+                                <div class="flex items-center justify-between bg-gray-900 p-3 rounded-lg">
+                                    <div class="flex items-center">
+                                        <div class="relative mr-3">
+                                            <div class="avatar bg-blue-600">R</div>
+                                            <div class="status-indicator online"></div>
+                                        </div>
+                                        <div>
+                                            <div class="font-medium">RaiderPro</div>
+                                            <div class="text-xs text-gray-400">Member since Jun 2023</div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="nexus-btn nexus-btn-secondary text-sm py-1">Manage</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between bg-gray-900 p-3 rounded-lg">
+                                    <div class="flex items-center">
+                                        <div class="relative mr-3">
+                                            <div class="avatar bg-green-600">G</div>
+                                            <div class="status-indicator idle"></div>
+                                        </div>
+                                        <div>
+                                            <div class="font-medium">GamerX</div>
+                                            <div class="text-xs text-gray-400">Member since Apr 2023</div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="nexus-btn nexus-btn-secondary text-sm py-1">Manage</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between bg-gray-900 p-3 rounded-lg">
+                                    <div class="flex items-center">
+                                        <div class="relative mr-3">
+                                            <div class="avatar bg-yellow-600">T</div>
+                                            <div class="status-indicator dnd"></div>
+                                        </div>
+                                        <div>
+                                            <div class="font-medium">TwitchStar</div>
+                                            <div class="text-xs text-gray-400">Member since May 2023</div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="nexus-btn nexus-btn-secondary text-sm py-1">Manage</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-center">
+                                <button class="nexus-btn nexus-btn-secondary text-sm">View All Members</button>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800 rounded-lg p-6">
+                            <h3 class="text-xl font-semibold mb-4">Moderation Log</h3>
+                            
+                            <div class="space-y-2">
+                                <div class="bg-gray-900 p-3 rounded-lg">
+                                    <div class="flex items-center justify-between mb-1">
+                                        <div class="font-medium">Message Deleted</div>
+                                        <div class="text-xs text-gray-400">10 minutes ago</div>
+                                    </div>
+                                    <div class="text-sm text-gray-300">Moderator: <span class="text-blue-400">@Admin</span></div>
+                                    <div class="text-sm text-gray-300">Target: <span class="text-blue-400">@ToxicUser123</span></div>
+                                    <div class="text-xs text-gray-400 mt-1">Reason: Violated community guidelines</div>
+                                </div>
+                                
+                                <div class="bg-gray-900 p-3 rounded-lg">
+                                    <div class="flex items-center justify-between mb-1">
+                                        <div class="font-medium">User Timed Out</div>
+                                        <div class="text-xs text-gray-400">25 minutes ago</div>
+                                    </div>
+                                    <div class="text-sm text-gray-300">Moderator: <span class="text-blue-400">@Moderator1</span></div>
+                                    <div class="text-sm text-gray-300">Target: <span class="text-blue-400">@SpamBot</span></div>
+                                    <div class="text-xs text-gray-400 mt-1">Duration: 24 hours</div>
+                                </div>
+                                
+                                <div class="bg-gray-900 p-3 rounded-lg">
+                                    <div class="flex items-center justify-between mb-1">
+                                        <div class="font-medium">AutoMod Filtered Message</div>
+                                        <div class="text-xs text-gray-400">1 hour ago</div>
+                                    </div>
+                                    <div class="text-sm text-gray-300">System: <span class="text-green-400">AutoMod</span></div>
+                                    <div class="text-sm text-gray-300">Target: <span class="text-blue-400">@NewUser</span></div>
+                                    <div class="text-xs text-gray-400 mt-1">Filter: Excessive caps</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-center mt-4">
+                                <button class="nexus-btn nexus-btn-secondary text-sm">View Full Log</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- User list sidebar -->
+            <div class="w-60 bg-gray-800 min-h-screen overflow-y-auto p-4">
+                <h2 class="font-bold mb-4">Online — 12</h2>
+                
+                <div class="mb-2">
+                    <div class="flex items-center mb-3">
+                        <div class="relative mr-3">
+                            <div class="avatar bg-indigo-600">
+                                <span>N</span>
+                            </div>
+                            <div class="status-indicator online"></div>
+                        </div>
+                        <div>
+                            <div class="font-medium">NexusBot</div>
+                            <div class="text-xs text-gray-400">AI Assistant</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-3">
+                        <div class="relative mr-3">
+                            <div class="avatar bg-purple-600">
+                                <span>A</span>
+                            </div>
+                            <div class="status-indicator online"></div>
+                        </div>
+                        <div>
+                            <div class="font-medium">Alex</div>
+                            <div class="text-xs text-gray-400">Playing Fortnite</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-3">
+                        <div class="relative mr-3">
+                            <div class="avatar bg-green-600">
+                                <span>J</span>
+                            </div>
+                            <div class="status-indicator online"></div>
+                        </div>
+                        <div>
+                            <div class="font-medium">Jamie</div>
+                            <div class="text-xs text-gray-400">In voice channel</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-3">
+                        <div class="relative mr-3">
+                            <div class="avatar bg-red-600">
+                                <span>S</span>
+                            </div>
+                            <div class="status-indicator online"></div>
+                        </div>
+                        <div>
+                            <div class="font-medium">Samantha</div>
+                            <div class="text-xs text-gray-400">Playing Valorant</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2 class="font-bold mb-4 mt-6">Idle — 3</h2>
+                
+                <div class="mb-2">
+                    <div class="flex items-center mb-3">
+                        <div class="relative mr-3">
+                            <div class="avatar bg-yellow-600">
+                                <span>C</span>
+                            </div>
+                            <div class="status-indicator idle"></div>
+                        </div>
+                        <div>
+                            <div class="font-medium">Chris</div>
+                            <div class="text-xs text-gray-400">Idle for 10 minutes</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-3">
+                        <div class="relative mr-3">
+                            <div class="avatar bg-pink-600">
+                                <span>E</span>
+                            </div>
+                            <div class="status-indicator idle"></div>
+                        </div>
+                        <div>
+                            <div class="font-medium">Emma</div>
+                            <div class="text-xs text-gray-400">Idle for 5 minutes</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2 class="font-bold mb-4 mt-6">Do Not Disturb — 2</h2>
+                
+                <div>
+                    <div class="flex items-center mb-3">
+                        <div class="relative mr-3">
+                            <div class="avatar bg-blue-600">
+                                <span>D</span>
+                            </div>
+                            <div class="status-indicator dnd"></div>
+                        </div>
+                        <div>
+                            <div class="font-medium">Daniel</div>
+                            <div class="text-xs text-gray-400">Streaming</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-3">
+                        <div class="relative mr-3">
+                            <div class="avatar bg-orange-600">
+                                <span>M</span>
+                            </div>
+                            <div class="status-indicator dnd"></div>
+                        </div>
+                        <div>
+                            <div class="font-medium">Maria</div>
+                            <div class="text-xs text-gray-400">Do not disturb</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!-- Footer -->
-  <div class="footer">
-    <p>&copy; 2023 QuickTools. All rights reserved.</p>
-  </div>
+    <script>
+        // Tab navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and content
+                    tabButtons.forEach(btn => btn.classList.remove('bg-gray-700', 'text-white'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('bg-gray-700', 'text-white');
+                    
+                    // Show the corresponding content
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Channel selection
+            const channels = document.querySelectorAll('.channel');
+            channels.forEach(channel => {
+                channel.addEventListener('click', () => {
+                    channels.forEach(c => c.classList.remove('active'));
+                    channel.classList.add('active');
+                });
+            });
+            
+            // Server selection
+            const servers = document.querySelectorAll('.server-icon');
+            servers.forEach(server => {
+                server.addEventListener('click', () => {
+                    servers.forEach(s => s.classList.remove('active'));
+                    server.classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
